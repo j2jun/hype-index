@@ -1,0 +1,21 @@
+# category  owner/repo   — one per line; add categories freely, the page groups by them
+mcp-servers modelcontextprotocol/servers
+mcp-servers github/github-mcp-server
+mcp-servers microsoft/playwright-mcp
+mcp-servers upstash/context7
+mcp-servers awslabs/mcp
+mcp-servers ChromeDevTools/chrome-devtools-mcp
+mcp-servers oraios/serena
+mcp-servers GLips/Figma-Context-MCP
+mcp-servers mendableai/firecrawl-mcp-server
+mcp-servers supabase-community/supabase-mcp
+mcp-servers cloudflare/mcp-server-cloudflare
+mcp-servers getsentry/sentry-mcp
+mcp-servers makenotion/notion-mcp-server
+mcp-servers browserbase/mcp-server-browserbase
+mcp-servers grafana/mcp-grafana
+mcp-servers hashicorp/terraform-mcp-server
+mcp-servers containers/kubernetes-mcp-server
+mcp-servers mongodb-js/mongodb-mcp-server
+mcp-servers korotovsky/slack-mcp-server
+mcp-servers executeautomation/mcp-playwright
