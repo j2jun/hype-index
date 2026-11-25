@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hype Index</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 <style>
   :root { --bg:#fafaf7; --fg:#1b1b1b; --muted:#6b6b6b; --line:#e4e2dc; --up:#1a7f37; --down:#cf222e; --new:#8250df; }
   @media (prefers-color-scheme: dark) { :root { --bg:#111214; --fg:#ececec; --muted:#9a9a9a; --line:#2a2b2e; --up:#3fb950; --down:#f85149; --new:#bc8cff; } }
   body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui, sans-serif; }
   main { max-width:860px; margin:0 auto; padding:32px 16px; }
   h1 { margin:0; font-size:2.2rem; letter-spacing:-.02em; }
-  .tag, .meta, td.desc { color:var(--muted); }
+  .tag, .meta, .desc { color:var(--muted); }
   h2 { margin-top:2rem; text-transform:capitalize; }
   table { width:100%; border-collapse:collapse; }
   td, th { padding:8px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
@@ -19,7 +20,7 @@
   td.rank { font-weight:700; width:2ch; }
   .up { color:var(--up); } .down { color:var(--down); } .new { color:var(--new); font-weight:600; font-size:.8rem; }
   a { color:inherit; font-weight:600; text-decoration:none; } a:hover { text-decoration:underline; }
-  td.desc { font-size:.85rem; display:block; }
+  .desc { font-size:.85rem; display:block; }
   @media (max-width:600px) { .hide-sm { display:none; } }
 </style>
 </head>
@@ -45,7 +46,7 @@ fetch("data/latest.json").then(r => r.json()).then(data => {
   document.getElementById("meta").textContent = "Updated " + new Date(data.generated).toLocaleDateString();
   const boards = document.getElementById("boards");
   for (const [cat, items] of Object.entries(data.categories)) {
-    boards.append(el("h2", null, cat.replace(/-/g, " ")));
+    boards.append(el("h2", null, cat.replace(/-/g, " ").replace(/\bmcp\b/i, "MCP")));
     const table = el("table");
     const head = table.insertRow();
     for (const [h, cls] of [["#",""],["",""],["Name",""],["Stars","num"],["This week","num hide-sm"],["Score","num hide-sm"]]) head.append(el("th", cls, h));
